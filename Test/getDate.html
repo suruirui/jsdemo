@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="date" style="width: 800px; height:40px; color: green; font-size: 21px; ">
+<script type="text/javascript">
+   var dateObj = document.getElementById("date");
+   function getDate(){
+   	   var date = new Date();
+   	   var time = "today is " + date.getFullYear() + "nian "+(date.getMonth() + 1)+ "yue" +date.getDate() +"ri" + date.getHours() + "dian" + date.getMinutes() + "fen"
+      + date.getSeconds() +"miao" + date.getMilliseconds() +"haomiao";
+       dateObj.value = time;
+   }
+   setInterval(getDate,1);
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	function padding(number){
+  		return number < 10 ? '0'+number :'' + number;
+	}
+	
+    function format(date){
+      return date.getFullYear() + '-' + padding(date.getMonth() +1) + '-' +
+        padding(date.getDate()) + ' '+ padding(date.getHours()) +':'+ padding(date.getMinutes()) +':'+ padding(date.getSeconds()); 
+    }
+	var date = new Date();
+	console.log(date);
+	console.log(format(date));
+</script>
+</body>
+</html>

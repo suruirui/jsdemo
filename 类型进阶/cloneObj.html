@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>clone object</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function cloneObj(obj){
+				var o;
+				if(typeof(obj) == 'object'){  //引用类型
+					if(obj == null){
+						o = null;
+					}else if(obj instanceof Array){  //array
+						o = [];
+						for(var i in obj){
+							o.push(obj[i]);
+						}
+					}else if(obj instanceof Date){ //date
+						o = new Date();
+						o.setTime(obj.getTime());
+					}else{  						//other object
+						o = {};
+						for(var k in obj){
+							o[k] = obj[k];
+						}
+					}
+				}else{   //原始类型
+					o = obj;
+				}
+				return o;
+		}
+		//testing
+		var person = {
+			name:'lisi',
+			age:20
+		}
+		var p = cloneObj(person);
+		var arr = [2,3,4,5];
+		var axx = cloneObj(arr);
+		var date = cloneObj(new Date());
+
+		var str = "hello";
+		var s = cloneObj(str);
+		console.log(typeof(person));
+		console.log(p);
+		console.log('axx',axx);
+		console.log('date',date);
+		console.log('s',s);
+	</script>
+</body>
+</html>

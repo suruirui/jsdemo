@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var user = {
+			id :1,
+			nick:'tom',
+			avatar: "1.jpg",
+            tags: null,
+            authed: false
+		}
+
+		// var userJson = JSON.stringify(user);
+		// var userJson = JSON.stringify(user,function(k,v){
+		// 	if(k === 'tags'){
+		// 		return 'ds 2b';
+		// 	}
+		// 	return v;
+		// });
+		var userJson = JSON.stringify(user,['id','nick','authed']);
+		console.log(userJson);
+
+
+
+	</script>
+</body>
+</html>

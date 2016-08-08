@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>json parse</title>
+</head>
+<body>
+<script type="text/javascript">
+	 var userJSON = '{"id":1,"nick":"tom","avatar":"1.jpg","tags":null,"authed":false}';
+
+	 // var user = JSON.parse(userJSON);//parse arguments is 
+	 var user = JSON.parse(userJSON,function(k,v){
+	 	if(k === 'avatar'){
+	 		return 'http://music.163.com/imgs/' + v;
+	 	}
+	 	return v;
+	 });
+	 // debugger;
+	 console.log(user);
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	//对一个数组（每项都是数值）求和
+	var arr = [1,2,3,45,5];
+	var sum = 0;
+   //1. for loop
+	var add = function(arr){  
+		for(var i =0;i<arr.length;i++){  // for(var i in arr) for..in 
+			 sum += arr[i];
+		}
+		return sum;
+	}
+
+
+	sum = add(arr); 
+	console.log(sum); //56 
+
+    //2.forEach
+    var add1 = function(item){
+		return sum+= item;
+	}
+    arr.forEach(add1);
+    console.log(sum);  //56
+	//3. using map
+	var add1 = function(item){
+		return sum+= item;
+	}
+	arr.map(add1);
+	console.log(sum);  //56
+
+	
+	//4.reduce
+	var add2 = function(preResult,item){
+		return preResult+item;
+	}
+	sum = arr.reduce(add2,0);  //56
+    
+	console.log(sum);
+
+   
+</script>
+</body>
+</html>

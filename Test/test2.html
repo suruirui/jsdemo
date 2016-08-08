@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	/**
+	 * 函数parseQuery用于解析url查询参数。
+	   语法如下：
+        var obj = parseQuery(query)
+        query是被解析的查询参数，函数返回解析后的对象。
+        使用范例如下：
+        var jerry = parseQuery("name=jerry&age=1");
+        jerry; 	返回值：{name: " jerry ", age: "1"}
+        var tom = parseQuery("name= tom &age=12&gender&");
+        tom; 	返回值：{name: "tom", age: "12", gender: ""}
+		请写出函数parseQuery的实现代码。
+	 */
+	function mParseQuery(str){
+		var obj = {};
+    	var arr = str.split("\&");
+    	// console.log(arr); //["name=jerry", "age=1"]
+    	if(arr){
+	    	for(var i in arr){ 
+	    		if(arr[i]){
+	    			var keyVal = arr[i].split("\=");
+			    	var key = keyVal[0];
+			    	var value;
+			    	if(keyVal[1]){
+					    value = keyVal[1];
+			    	}else{
+			    		value = "";
+			    	}
+			    	console.log(key +"," +value);
+			    	obj[key] = value;
+	    		}
+	    	}
+    	}
+    	return obj;
+	}
+    var jerry = mParseQuery("name=jerry&age=1");
+    var tom = mParseQuery("name= tom &age=12&gender&");
+    console.log(jerry);
+    console.log(tom);
+	
+
+</script>
+</body>
+</html>

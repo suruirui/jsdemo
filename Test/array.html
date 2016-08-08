@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var arr = [1,4,5];
+	var arr = [
+		163,
+		'fcyy',
+		{color:"red"},
+		[],
+		true
+	];
+	var students = [
+		{id:1,score:80},
+		{id:2,score:90},
+		{id:3,score:95}
+	];
+
+	var editScore = function(item,index,array){
+		item.score += 5;
+	}
+
+	students.forEach(editScore);  
+	students.reverse();  //fanzhuan
+	
+
+	//compare from score
+	students.sort(); 
+	var compareByScore = function(a,b){
+		return b.score - a.score;
+	}
+	students.sort(compareByScore);
+	
+    students.push({id:4,score:50});
+    students.unshift({id:5,score:77});
+      printArr(students);
+    var s1 = students.pop();  //del last
+    var s2 = students.shift();//del first
+    printArr(students);
+    console.log('----------');
+    console.log(s1);
+    console.log(s2);
+ 	 console.log('----------');
+    students.splice(1,1);// del elem on index 1
+ 	students.splice(0,0,{id:6,score:40});// add elem on index 0
+ 	students.splice(0,1,{id:7,score:34});// replace elem on index 0
+ 	printArr(students);
+ 	students.splice(1,2,{id:8,score:14}); //del 2 elem on index 1 and add {id:8,score:14} on this index
+   console.log('students----------');
+ 	 printArr(students);
+ 	console.log('----------');
+ 	var arr = [20,30,40,55];
+    var newArr = arr.slice(0,2);
+    newArr = arr.slice(0);// copy arr
+    console.log(arr.join(","));
+    printArr(newArr);
+    console.log('----------');
+    var scores = [60,70,77,90];
+    var newSores = [];
+    var addScore = function(item){
+    	newSores.push(item+5);
+    }
+    scores.forEach(addScore);
+ //    addScore = function(item,index,array){
+ //    	return item + 5;
+ //    }
+	// scores.map(addScore);
+
+	// var sum = function(preResult,item){
+	// 	return preResult+item.score;
+	// }
+	// scores.reduce(sum,0);   ?
+	printArr(scores);
+	console.log('----------');
+    printArr(newSores);
+    function printArr(arr){
+		for(var i in arr){
+			console.log(arr[i]);
+		}
+    }
+
+
+</script>
+</body>
+</html>

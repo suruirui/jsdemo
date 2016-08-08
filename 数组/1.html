@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	var array = [1,6,3];
+
+var array = [
+	163,
+	"netease",
+	{color:"red"},
+	[],
+	true
+];
+
+var students = [
+	{id:1,score:80},
+	{id:2,score:50},
+	{id:3,score:70}
+];
+students.length;  // 3
+students = [];
+students.length;  // 0
+
+var students = [
+	{id:1,score:80},
+	{id:2,score:50},
+	{id:3,score:70}
+];
+students[0];        // {id:1,score:80}
+students[0].score;  // 80
+students[1].score = 60;
+
+var telephones = [110,120,114];
+telephones.indexOf(120);  // 1
+telephones.indexOf(119);  // -1
+
+var students = [
+	{id:1,score:80},
+	{id:2,score:50},
+	{id:3,score:70}
+];
+var editScore = function(item,index,array){
+	item.score += 5;
+};
+students.forEach(editScore);
+
+var students = [
+	{id:1,score:80},
+	{id:2,score:50},
+	{id:3,score:70}
+];
+students.reverse();
+students[0].score;  // 70
+
+var students = [
+	{id:1,score:80},
+	{id:2,score:50},
+	{id:3,score:70}
+];
+var byScore = function(a,b){
+</script>
+</body>
+</html>
