@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型</title>
+</head>
+<body>
+	<script>
+		Array.prototype.delRepeat = function(){
+			var arr = this,
+			result = [],
+			flag; // 定义标记
+			for(var i=0; i< arr.length; i++){
+				flag = true;
+				for(var j = 0;j<result.length;j++){
+					if(result[j] === arr[i]){
+						flag = false;
+						break;
+					}
+				}
+				if(flag){
+					result.push(arr[i]);
+				}
+			}
+		}
+	</script>
+</body>
+</html>

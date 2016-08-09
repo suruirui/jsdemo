@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数调用模式的区别,体现在this上</title>
+</head>
+<body>
+	<script>
+		/**
+		 * 函数调用模式
+		 * @param {[type]} i [description]
+		 * @param {[type]} j [description]
+		 */
+		function add(i,j){
+			console.log(this); //this指向windows全局对象
+			var sum = i + j;
+			console.log(sum);  
+			(function(){
+				console.log(this);  //this指向windows全局对象
+			})()
+			return sum;
+		}
+
+		add(1,2);
+		/**
+		 * 方法调用模式
+		 * @type {Object}
+		 */
+		var myNumber = {
+			value:1,
+			add:function(i){
+				console.log(this);  //this指向调用者(对象本身)
+				this.value += i;
+			}
+		}
+		myNumber.add(1);
+		/**
+		 * 构造函数调用模式
+		 * @param {[type]} type  [description]
+		 * @param {[type]} color [description]
+		 */
+		function Car(type,color){
+			this.type = type;
+			this.color = color;
+			this.status = "stop";
+			this.light = "off";
+			console.log(this);  //this指向被构造的对象
+		}
+		Car.prototype.start = function(){
+			this.status = "driving";
+			this.light = "on";
+			console.log(this.type + " is " + this.status); 
+		}
+		Car.prototype.stop = function(){
+			this.status = "stop";
+			this.light = "off";
+			console.log(this.type + " is " +this.status);
+		}
+		var benz = new Car("benz","black");
+		benz.start();
+		// console.log(benz);
+		
+	</script>
+</body>
+</html>

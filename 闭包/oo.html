@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js面向对象</title>
+</head>
+<body>
+	<script>
+	//实现一个Circle类
+	//  编程实现：
+	// a.创建一个圆（Circle）的类，并定义该类的一个属性（半径）和两个方法（周长和面积），其中圆的半径可以通过构造函数初始化
+	// b.创建圆的一个对象，并调用该对象的方法计算圆的周长和面积
+	function Circle(r){
+		this.r = r;
+	}
+
+	  Circle.prototype = {
+                perimeter:function(){
+                    return (this.r*2*Math);
+                },
+                area:function(){
+                    return (this.r)*(this.r)*Math.PI;
+                },
+            };
+
+            var c1 = new Circle(4);
+            console.log("c1周长",c1.perimeter());
+             console.log("c1面积",c1.area());
+	</script>
+</body>
+</html>
