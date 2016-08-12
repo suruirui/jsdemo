@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继类承模型</title>
+</head>
+<body>
+	<script>
+	/**
+	 * 请使用Js代码写出一个类继承的模型，需包含以下实现：
+	定义父类和子类，并创建父类和子类的属性和方法
+	子类继承父类的属性和方法
+	在创建子类对象时，调用父类构造函数
+	 */
+	function Father(name,age){
+		this.name = name;
+		this.age = age;
+	}
+	// Father.prototype = {
+	// 	sayHello: function(){
+	// 		console.log("my name is  " + this.name + "," +this.age);
+	// 	}
+	// }
+	Father.prototype.sayHello = function(){
+		console.log("my name is  " + this.name + "," +this.age);
+	}
+
+	function Child(name,age,job){
+		Father.call(this,name,age); //子类继承父类的属性和方法 调用父类构造函数
+		this.job = job;
+	}
+	//子类继承父类原型 
+	Child.prototype = new Father();
+	Child.prototype.constructor = Child;
+	//子类特有方法
+	Child.prototype.getJob = function(){
+		console.log("	I am a " + this.job);
+	}
+	//创建子类对象
+	var tom = new Child("tom",12,"student");
+	tom.sayHello();   //调用父类方法
+	tom.getJob();
+	</script>
+</body>
+</html>

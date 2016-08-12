@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>circle</title>
+</head>
+<body>
+	<script>
+	/**
+	 * 实现一个Circle类
+	a.创建一个圆（Circle）的类，并定义该类的一个属性（半径）和两个方法（周长和面积），其中圆的半径可以通过构造函数初始化
+	b.创建圆的一个对象，并调用该对象的方法计算圆的周长和面积
+	 */
+	
+	function Circle(r){
+		this.r = r;
+	}
+	
+	Circle.prototype = {
+		getPerm:function(){
+			return (2 * Math.PI * this.r).toFixed(2);
+		},
+		getArea:function(){
+			return (this.r * this.r * Math.PI).toFixed(2);
+		}
+	}
+
+	var c = new Circle(3);
+	var perm = c.getPerm(),
+	      area = c.getArea();
+
+	 console.log("c的周长是:"+perm +",面积是" + area);
+	</script>
+</body>
+</html>
