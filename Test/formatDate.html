@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>formatDate</title>
+</head>
+<body>
+<script type="text/javascript">
+	function padding(number){
+  		return number < 10 ? '0'+number :'' + number;
+	}
+	
+ //    function format(date){
+ //      return date.getFullYear() + '-' + padding(date.getMonth() +1) + '-' +
+ //        padding(date.getDate()) + ' '+ padding(date.getHours()) +':'+ padding(date.getMinutes()) +':'+ padding(date.getSeconds()); 
+ //    }
+	// var date = new Date();
+	// console.log(date);
+	// console.log(format(date));
+	// 
+	function formatDate(date,pattern){
+		if(pattern == 'yyyy-MM-dd HH:mm:ss'){
+			return date.getFullYear() + '-' + padding(date.getMonth() +1) + '-' +
+        padding(date.getDate()) + ' '+ padding(date.getHours()) +':'+ padding(date.getMinutes()) +':'+ padding(date.getSeconds()); 
+		}else if(pattern == 'yyyy-MM-dd HH:mm'){
+			return date.getFullYear() + '-' + padding(date.getMonth() +1) + '-' +
+        padding(date.getDate()) + ' '+ padding(date.getHours()) +':'+ padding(date.getMinutes()); 
+		}else if(pattern == 'yyyy-MM-dd HH'){
+			return date.getFullYear() + '-' + padding(date.getMonth() +1) + '-' +
+        padding(date.getDate()) + ' '+ padding(date.getHours()); 
+		}else if(pattern == 'yyyy-MM-dd'){
+			return date.getFullYear() + '-' + padding(date.getMonth() +1) + '-' +
+        padding(date.getDate()); 
+		}else if(pattern == 'yyyy-MM'){
+			return date.getFullYear() + '-' + padding(date.getMonth() +1); 
+		}else if(pattern == 'yyyy'){
+			return date.getFullYear();
+		}else{
+			return;
+		}
+	}
+	// var date = new Date();
+	var date = new Date(2001, 8, 11, 8, 26, 8);
+	console.log(formatDate(date,'yyyy'));
+	console.log(formatDate(date, "yyyy-MM"));
+    console.log(formatDate(date, "yyyy-MM-dd"));	
+    console.log(formatDate(date, "yyyy-MM-dd HH"));	
+    console.log(formatDate(date, "yyyy-MM-dd HH:mm"));
+    console.log(formatDate(date, "yyyy-MM-dd HH:mm:ss"));		
+</script>
+</body>
+</html>

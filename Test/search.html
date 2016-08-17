@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>search</title>
+</head>
+<body>
+<script type="text/javascript">
+	//search
+	function search(arr,key){
+		var start = 0,end = arr.length -1;
+		while(start <= end){
+			var mid = Math.floor((start + end)/2);
+			if(arr[mid]> key){
+				end = mid - 1;
+			}else if(arr[mid] < key){
+				start = mid + 1;
+			}else{
+				return mid;
+			}
+		}
+		return -1;
+	}
+	var arr = [1, 2, 4, 6, 7, 9, 19,20, 30,40, 45, 47];
+
+	var index = search(arr,47);
+	console.log('index=',index);  //index = 11
+
+</script>
+</body>
+</html>

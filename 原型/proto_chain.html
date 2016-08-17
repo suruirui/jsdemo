@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>proto_chain</title>
+</head>
+<body>
+<script type="text/javascript">
+	 function Car(logo){
+	 	this.logo = logo;
+	 }
+	 Car.prototype = {
+	 	start:function(){
+			console.log('%s start',this.logo);
+		},
+		run:function(){
+			console.log('%s run',this.logo);
+		},
+		stop:function(){
+			console.log('%s stop',this.logo);
+		}
+	 }
+	 /**
+	  * define LandRover constructor from Car
+	  * @param {[type]} serialNo [description]
+	  */
+	function LandRover(serialNo){
+		this.serialNo = serialNo;
+	}
+	LandRover.prototype = new Car('landRover');
+	//create LandRover Object
+	var landRover1 = new LandRover(10001);
+	console.log(landRover1);
+	landRover1.start(); 
+
+</script>
+</body>
+</html>

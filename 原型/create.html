@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object.create</title>
+</head>
+<body>
+<script type="text/javascript">
+	//define proto object
+	var landRover = {
+		name:'landRover',
+		start:function(){
+			console.log('%s start',this.logo);
+		},
+		run:function(){
+			console.log('%s run',this.logo);
+		},
+		stop:function(){
+			console.log('%s stop',this.logo);
+		}
+	}
+	// create object using prototype
+	var landWind = Object.create(landRover);
+	landWind.logo = 'landWind';
+	console.log(landWind);
+	landWind.start();
+
+	var landCruiser = Object.create(landRover);
+	landCruiser.logo = 'landCruiser';
+	console.log(landCruiser);
+</script>
+</body>
+</html>

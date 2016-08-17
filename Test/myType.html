@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>myType</title>
+</head>
+<body>
+<script type="text/javascript">
+	function myType(obj){
+        if(obj.constructor == Number || obj.constructor == Boolean|| obj.constructor == Object || obj.constructor == Function){
+            return Object.prototype.toString.call(obj).slice(8,-1).toLowerCase();
+        }else{
+              return Object.prototype.toString.call(obj).slice(8,-1);
+        }
+	}
+
+	var t = myType(1);
+    t = myType(true); 
+    t = myType({}); 
+    t = myType(function(){}); 
+    t = myType([]); 
+    t = myType(new Date); 
+ 	console.log(t);
+
+</script>
+</body>
+</html>
