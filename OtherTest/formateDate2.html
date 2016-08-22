@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>formateDate</title>
+</head>
+<body>
+	<script>
+		function formatDate(date, pattern) {
+			    if (date instanceof(Date) && typeof(pattern) === 'string') {
+			        var o = {
+			            'y+': date.getFullYear(),
+			            'd+': date.getDate(),
+			            'M+': date.getMonth() + 1,
+			            'm+': date.getMinutes(),
+			            'H+': date.getHours(),
+			            's+': date.getSeconds()
+			        };
+			 
+			        for(var k in o){
+			            var regExp = new RegExp("("+k+")");
+			            if(regExp.test(pattern)){
+			                var item = '00'+o[k];
+			                pattern = pattern.replace(RegExp.$1,item.substring(item.length-RegExp.$1.length,item.length));
+			            }
+			        }
+			        return pattern;
+			    }
+		}
+
+
+	</script>
+</body>
+</html>

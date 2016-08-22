@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html</title>
+</head>
+<body>
+	<script>
+		function multiply (){
+		    var processData = function(previousValue, currentValue) {
+		        return previousValue*currentValue;
+		    }
+		    if (0 === arguments.length){
+		        return false;
+		    }
+    		    var array = [].slice.call(arguments);
+    		    return array.reduce(processData, 1);
+		}
+	</script>
+</body>
+</html>

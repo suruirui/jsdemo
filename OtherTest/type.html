@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>type</title>
+</head>
+<body>
+	<script>
+		function myType(param){
+   		  	if(typeof param=="object"){
+       				 if((Object.prototype.toString.call(param).slice(8,-1))=="Object"){
+         				   	return "object";
+       				 } else {
+          				  	return Object.prototype.toString.call(param).slice(8,-1);
+      				 }
+ 			} else {
+        				return typeof param;
+   			 }
+			}
+	</script>
+</body>
+</html>
