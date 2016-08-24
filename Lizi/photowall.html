@@ -47,7 +47,6 @@
 					return;
 				}
 				on = false;
-
 				var endNum = 0; //运动完成的图片数量
 				var allEnd = 0;
 				for (var i = 0; i < imgs.length; i++) {
@@ -56,12 +55,12 @@
 							montion(imgs[i],'10ms',function(){
 								//一上来变小
 								this.style.transform='scale(0)';
-								// this.style.opacity='0';
+								this.style.opacity='0';
 							},function(){
 								// 第二个运动函数 变小之后再变大
 								montion(this,'1s',function(){
 									this.style.transform = 'scale(1)';
-									this.style.opacity=0;
+									this.style.opacity='0';
 								},function(){
 									endNum++;
 									//变大并旋转
@@ -80,6 +79,7 @@
 					for (var i = 0; i < imgs.length; i++) {
 						imgs[i].style.transition = ' ';
 						//先给一个初始值
+						// imgs[i].style.transform='rotateY(0deg) translateZ(-'+Math.random()*500+'px)';
 						imgs[i].style.transform='rotateY(0deg) translateZ(-'+Math.random()*500+'px)';
 						//用函数声明的方式去写，是因为想要在循环里面找i的值
 						(function(i){
@@ -88,12 +88,12 @@
 									this.style.opacity = 1;
 									this.style.transform= 'rotateY(-360deg) translateZ(0)';
 								},function(){
-									//这个条件成立说明所有的图片都运动完了，然后可以让用户再次点击
+									//避免用户连续点击
 									allEnd++;
-									if(allEnd == imgs.length){
-										on = true; // 当所有运动完了以后，用户才可以点
+									if(allEnd==imgs.length){
+										on=true;
 									}
-								});
+							});
 							},Math.random()*1000);
 						})(i);
 					}
