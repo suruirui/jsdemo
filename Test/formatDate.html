@@ -9,14 +9,7 @@
   		return number < 10 ? '0'+number :'' + number;
 	}
 	
- //    function format(date){
- //      return date.getFullYear() + '-' + padding(date.getMonth() +1) + '-' +
- //        padding(date.getDate()) + ' '+ padding(date.getHours()) +':'+ padding(date.getMinutes()) +':'+ padding(date.getSeconds()); 
- //    }
-	// var date = new Date();
-	// console.log(date);
-	// console.log(format(date));
-	// 
+
 	function formatDate(date,pattern){
 		if(pattern == 'yyyy-MM-dd HH:mm:ss'){
 			return date.getFullYear() + '-' + padding(date.getMonth() +1) + '-' +
